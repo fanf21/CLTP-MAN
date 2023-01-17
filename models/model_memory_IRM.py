@@ -238,14 +238,7 @@ class model_memory_IRM(nn.Module):
         memory_past = self.memory_past
         memory_fut = self.memory_fut
         mem_batch=memory_fut.size(0)
-
-
-        key_sort = F.normalize(memory_past, p=2, dim=1)
-        query_sort = F.normalize(state_past.reshape(-1,48), p=2, dim=1)
-
-        score = torch.matmul(query_sort, key_sort.t())  # (bs,m)
-        _, index = torch.topk(score, mem_batch, dim=1)
-        n = 200
+        
         key_topk = memory_past   # [index[:, :n]]
         value_topk = memory_fut   # [index[:, :n]]
 
