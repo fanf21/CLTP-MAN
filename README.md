@@ -77,7 +77,7 @@ train_controllerMem.py calls trainer_controllerMem.py.
 When the model is training,then it will be saved into the folder *traing/trainig_controller/*.
 A pretrained model (autoencoder + writing controller) can be found in *pretrained_models/model_controller/*
 
-### Training Iterative Refinement Module (IRM)
+### Training Trajecory Prediction Module (TP)
 ```bash
 python train_TP.py --model pretrained_autoencoder+controller_model_path
 ```
